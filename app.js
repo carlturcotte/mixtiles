@@ -3,21 +3,7 @@ var mongoose  = require('mongoose');
 var express   = require('express');
 
 var app    = express();
-var db;
-
-var config = {
-    "USER"    : "",
-    "PASS"    : "",
-    "HOST"    : "ec2-34-208-177-112.us-west-2.compute.amazonaws.com",
-    "PORT"    : "27017",
-    "DATABASE" : "my_example"
-};
-
-
 var standardGreeting = 'Hello World!';
-
-
-
 
 app.get('/', function(req, res){
         res.send(standardGreeting);
