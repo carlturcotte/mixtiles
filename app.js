@@ -5,7 +5,7 @@ var express   = require('express');
 var app    = express();
 var db;
 
-    var config = {
+var config = {
     "USER"    : "",
     "PASS"    : "",
     "HOST"    : "ec2-34-208-177-112.us-west-2.compute.amazonaws.com",
@@ -13,7 +13,7 @@ var db;
     "DATABASE" : "my_example"
 };
 
-    var dbPath  = "mongodb://"+config.USER + ":"+
+var dbPath  = "mongodb://"+config.USER + ":"+
     config.PASS + "@"+
     config.HOST + ":"+
     config.PORT + "/"+
