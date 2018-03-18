@@ -13,34 +13,14 @@ var config = {
     "DATABASE" : "my_example"
 };
 
-var dbPath  = "mongodb://"+config.USER + ":"+
-    config.PASS + "@"+
-    config.HOST + ":"+
-    config.PORT + "/"+
-    config.DATABASE;
+
 var standardGreeting = 'Hello World!';
 
-    var greetingSchema = mongoose.Schema({
-    sentence: String
-});
-var Greeting= mongoose.model('Greeting', greetingSchema);
 
-db = mongoose.connect(dbPath);
 
-mongoose.connection.once('open', function() {
-    var greeting;
-    Greeting.find( function(err, greetings){
-        if( !greetings ){
-            greeting = new Greeting({ sentence: standardGreeting });
-            greeting.save();
-        }
-    });
-});
 
 app.get('/', function(req, res){
-    Greeting.findOne(function (err, greeting) {
-        res.send(greeting.sentence);
-    });
+        res.send(standardGreeting);
 });
 
 app.use(function(err, req, res, next){
